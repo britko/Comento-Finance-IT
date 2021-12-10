@@ -44,7 +44,7 @@
 
         ALTER TABLE ${table_name} CONVERT TO CHARSET UTF8;
     ```
-      [TABLE_INFORMATION](https://github.com/britko/Comento-Finance-IT/tree/master/Week%201/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%9C%20%EC%82%AC%EC%A0%84%20%EC%84%A4%EC%A0%95%20%EB%82%B4%EC%9A%A9(%ED%85%8C%EC%9D%B4%EB%B8%94)/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EB%B3%B4)
+      [TABLE_INFORMATION](https://github.com/britko/Comento-Finance-IT/tree/master/Week%201/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%9C%20%EC%82%AC%EC%A0%84%20%EC%84%A4%EC%A0%95%20%EB%82%B4%EC%9A%A9(%ED%85%8C%EC%9D%B4%EB%B8%94)/%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%A0%95%EB%B3%B4)
   - Insert data
     ```sql
         source ${DATA_INFOMATION}PATH
