@@ -1,0 +1,11 @@
+create table stock_invest_danger
+(
+    code_name    text       not null COMMENT '종목코드',
+    code         varchar(6) not null COMMENT '종목명',
+    post_date    date       null COMMENT '공시일',
+    fix_date     date       null COMMENT '지정일',
+    cleared_date date       null COMMENT '해제일'
+) COMMENT '투자 위험 종목';
+
+create index ix_stock_invest_danger_index
+    on stock_invest_danger (`code`);

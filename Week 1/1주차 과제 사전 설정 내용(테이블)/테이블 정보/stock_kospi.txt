@@ -1,0 +1,9 @@
+create table stock_kospi
+(
+    code       text   not null COMMENT '종목코드',
+    code_name  text   not null COMMENT '종목명',
+    check_item int    null COMMENT '추가체크명'
+) COMMENT '코스피';
+
+create index ix_stock_kospi_index
+    on stock_kospi (`code`);

@@ -1,0 +1,17 @@
+create table stock_info
+(
+    code          text null COMMENT '종목코드',
+    stock_market  text null COMMENT '시장구분',
+    category0     text null COMMENT '대분류',
+    market_class0 text null COMMENT '업종구분',
+    market_class1 text null COMMENT '상세 업종구분',
+    category1     text null COMMENT '중분류',
+    audit         text null COMMENT '감리구분',
+    margin        int  null COMMENT '증거금 비율',
+    remarks       text null COMMENT '비고',
+    thema_code    text null COMMENT '테마 코드',
+    thema_name    text null COMMENT '테마명'
+) COMMENT '종목정보';
+
+create index ix_stock_info_index
+    on stock_info (`code`);
