@@ -9,7 +9,7 @@ filename = BASE_DIR + '/상장법인목록(' + now + ').csv'
 f = open(filename, 'w', encoding='utf-8-sig', newline='')
 writer = csv.writer(f)
 
-# 탭으로 구분해서 리스트 형식으로 저장 ["회사명", "업종", "주요제품", ...]
+# ','으로 구분해서 리스트 형식으로 저장 ["회사명", "업종", "주요제품", ...]
 title = '회사명,업종,주요제품,상장일,결산월,대표자명,홈페이지,지역,시장,비고1,비고2,비고3,비고4,비고5'.split(',')
 # 각 열마다 제목 삽입
 writer.writerow(title)
