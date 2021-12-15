@@ -1,0 +1,5 @@
+ERD 참고 자료
+https://www.erdcloud.com/d/wNtbZdTQkjqehzKgn
+
+ERD 관계선 참고
+https://eyecandyzero.tistory.com/246

@@ -1,0 +1,42 @@
+create table stock_finance
+(
+    date              text  null COMMENT '날짜',
+    code              text  null COMMENT '종목코드',
+    settlement_month  text  null COMMENT '결산월',
+    par_value         float null COMMENT '액면가',
+    capital_stock     float null COMMENT '자본금',
+    listed_stock      float null COMMENT '상장주식',
+    credit_rate       float null COMMENT '신용비율',
+    year_highest      float null COMMENT '연중최고',
+    year_lowest       float null COMMENT '연중최저',
+    market_cap        float null COMMENT '시가총액',
+    ROE               float null COMMENT 'ROE',
+    EPS               float null COMMENT 'EPS',
+    foreign_rate      float null COMMENT '외인소진률',
+    sub_price         float null COMMENT '대용가',
+    PER               float null COMMENT 'PER',
+    PBR               float null COMMENT 'PBR',
+    EV                float null COMMENT 'EV',
+    BPS               float null COMMENT 'BPS',
+    gross_profit      float null COMMENT '매출액',
+    operation_income  float null COMMENT '영업이익',
+    net_income        float null COMMENT '당기순이익',
+    `250highest`      float null COMMENT '250최고',
+    `250lowest`       float null COMMENT '250최저',
+    upper_limit       float null COMMENT '상한가',
+    lower_limit       float null COMMENT '하한가',
+    standard_price    float null COMMENT '기준가',
+    `250highest_date` text  null COMMENT '250최고가일',
+    `250lowest_date`  text  null COMMENT '250최저가일',
+    `250lowest_rate`  float null COMMENT '250최저가대비율',
+    trading_rate      float null COMMENT '거래대비',
+    outstanding_stock float null COMMENT '유통주식',
+    outstanding_rate  float null COMMENT '유통비율'
+) COMMENT '주식 금융정보';
+
+create index ix_stock_finance_index_1
+    on stock_finance (`code`);
+
+create index ix_stock_finance_index_2
+    on stock_finance (`date`);
+
