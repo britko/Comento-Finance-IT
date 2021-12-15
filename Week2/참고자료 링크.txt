@@ -1,0 +1,8 @@
+pd.read_excel에서 xls 안된다.
+https://blog.naver.com/jin31200/221355318078
+
+엑셀 안 읽어짐
+pandas 기본 엔진이었던 xlrd가 업데이트되면서 xlsx를 지원하지 않는다고 한다.
+pip install openpyxl
+https://steadiness-dev-invest.tistory.com/141
+
