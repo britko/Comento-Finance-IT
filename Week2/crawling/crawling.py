@@ -22,6 +22,7 @@ options.add_argument("--disable-gpu")   # 버그 이슈 예방을 위해 그래�
 
 # headless는 거부되는 서버가 있기 때문에 실제 User-Agent값을 넣어주어야 한다.
 # 브라우저에 부하가 증가하는 듯
+# TODO: user agent 받아오는거 고쳐야할 듯
 # curr_userAgent = "user-agent=" + str(autoUserAgent.userAgent)
 # options.add_argument(curr_userAgent)
 
