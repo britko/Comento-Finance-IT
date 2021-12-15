@@ -1,8 +1,9 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os, csv, time, datetime
-import autoUserAgent
+from autoUserAgent import userAgent
 
+# csv파일 생성
 BASE_DIR = os.getcwd()
 now = datetime.datetime.now().strftime('%Y-%m-%d %H %M')
 filename = BASE_DIR + '/상장법인목록(' + now + ').csv'
@@ -22,9 +23,8 @@ options.add_argument("--disable-gpu")   # 버그 이슈 예방을 위해 그래�
 
 # headless는 거부되는 서버가 있기 때문에 실제 User-Agent값을 넣어주어야 한다.
 # 브라우저에 부하가 증가하는 듯
-# TODO: user agent 받아오는거 고쳐야할 듯
-# curr_userAgent = "user-agent=" + str(autoUserAgent.userAgent)
-# options.add_argument(curr_userAgent)
+curr_userAgent = userAgent()
+options.add_argument("user-agent=" + curr_userAgent)
 
 browser = webdriver.Chrome(options=options)
 browser.maximize_window()
@@ -77,7 +77,7 @@ while True:
             for stock in stocks:
                 data.append(stock['alt'])
 
-        writer.writerow(data)
+        writer.writerow(data)   # 현재 행 데이터 기록
 
     # 현재 페이지 번호 가져오기
     curr_page = soup.find("div", "info type-00").find("strong").get_text().split()
@@ -90,10 +90,7 @@ while True:
     # browser.find_element_by_class_name('next').click()    # 가끔 오류
     element = browser.find_element_by_class_name("next")
     browser.execute_script("arguments[0].click();", element)
- 
+
 
 print("스크래핑 완료")
 browser.quit()
-
-
-
