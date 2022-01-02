@@ -37,25 +37,42 @@ public class comentoRestController {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/marketcap/sum", produces = "application/json")
 	public HashMap getMarketSum(@RequestParam String market) {
+		ComentoModel data = ComentoDao.getMarketSum(market);
 		HashMap<String, Object> resultData = new HashMap<>();
+		resultData.put("result", "sucess");
+		resultData.put("description", "sucess");
+		resultData.put("marketCapSum", data.getMarket_cap());
 		return resultData;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/30", produces = "application/json")
-	public HashMap getCode30(@RequestParam String market) {	
+	public HashMap getCode30(@RequestParam String market) {
+		ComentoModel data = ComentoDao.getCode30(market);
 		HashMap<String, Object> resultData = new HashMap<>();
+		resultData.put("result", "sucess");
+		resultData.put("description", "sucess");
+		resultData.put("code", data.getCode());
+		resultData.put("code_name", data.getThema_name());
 		return resultData;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/detail", produces = "application/json")
 	public HashMap getCodeDetail(@RequestParam String code,String market) {
+		ComentoModel data = ComentoDao.getCodeDetail(code ,market);
 		HashMap<String, Object> resultData = new HashMap<>();
+		resultData.put("result", "sucess");
+		resultData.put("description", "sucess");
+		resultData.put("theme_name", data.getThema_name());
 		return resultData;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/maxRoe", produces = "application/json")
 	public HashMap getMaxRoe(@RequestParam String market) {
+		ComentoModel data = ComentoDao.getMaxRoe(market);
 		HashMap<String, Object> resultData = new HashMap<>();
+		resultData.put("result", "sucess");
+		resultData.put("description", "sucess");
+		resultData.put("theme_name", data.getThema_name());
 		return resultData;
 	}
 }

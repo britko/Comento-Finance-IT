@@ -22,15 +22,23 @@ public class ComentoDao {
 		return data;
 	}
 	
-	public void getMarketSum(String market) {
+	public ComentoModel getMarketSum(String market) {
+		ComentoModel data = mapper.getMarketSum(market);
+		return data;
 	}
 	
-	public void getCode30(String market) {
+	public ComentoModel getCode30(String market) {
+		ComentoModel data = mapper.getCode30(market);
+		return data;
 	}
 	
-	public void getCodeDetail(String code,String market) {
+	public ComentoModel getCodeDetail(String code,String market) {
+		ComentoModel data = mapper.getCodeDetail(code, market);
+		return data;
 	}
 	
-	public void getMaxRoe(String market) {
+	public ComentoModel getMaxRoe(String market) {
+		ComentoModel data = mapper.getMaxRoe(market);
+		return data;
 	}
 }
