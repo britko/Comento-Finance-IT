@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.comento.dao.mapper.ComentoMapper;
+import com.project.comento.model.ComentoDetailModel;
+import com.project.comento.model.ComentoListModel;
 import com.project.comento.model.ComentoModel;
 
 @Component
@@ -27,18 +29,18 @@ public class ComentoDao {
 		return data;
 	}
 	
-	public ComentoModel getCode30(String market) {
-		ComentoModel data = mapper.getCode30(market);
+	public List getCode30(String market) {
+		List<ComentoListModel> list = (List<ComentoListModel>) mapper.getCode30(market);
+		return list;
+	}
+	
+	public ComentoDetailModel getCodeDetail(String code,String market) {
+		ComentoDetailModel data = mapper.getCodeDetail(code,market);
 		return data;
 	}
 	
-	public ComentoModel getCodeDetail(String code,String market) {
-		ComentoModel data = mapper.getCodeDetail(code, market);
-		return data;
-	}
-	
-	public ComentoModel getMaxRoe(String market) {
-		ComentoModel data = mapper.getMaxRoe(market);
+	public ComentoDetailModel getMaxRoe(String market) {
+		ComentoDetailModel data = mapper.getMaxRoe(market);
 		return data;
 	}
 }

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.comento.dao.ComentoDao;
+import com.project.comento.model.ComentoDetailModel;
+import com.project.comento.model.ComentoListModel;
 import com.project.comento.model.ComentoModel;
 
 @RestController
@@ -47,32 +49,40 @@ public class comentoRestController {
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/30", produces = "application/json")
 	public HashMap getCode30(@RequestParam String market) {
-		ComentoModel data = ComentoDao.getCode30(market);
+		List<ComentoListModel> list = ComentoDao.getCode30(market);
 		HashMap<String, Object> resultData = new HashMap<>();
 		resultData.put("result", "sucess");
 		resultData.put("description", "sucess");
-		resultData.put("code", data.getCode());
-		resultData.put("code_name", data.getThema_name());
+		resultData.put("codeList", list);
 		return resultData;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/detail", produces = "application/json")
 	public HashMap getCodeDetail(@RequestParam String code,String market) {
-		ComentoModel data = ComentoDao.getCodeDetail(code ,market);
+		ComentoDetailModel data = ComentoDao.getCodeDetail(code,market);
 		HashMap<String, Object> resultData = new HashMap<>();
 		resultData.put("result", "sucess");
 		resultData.put("description", "sucess");
-		resultData.put("theme_name", data.getThema_name());
+		resultData.put("code", data.getCode());
+		resultData.put("code_name", data.getCode_name());
+		resultData.put("thema_name", data.getThema_name());
+		resultData.put("sub_price", data.getSub_price());
+		resultData.put("ROE", data.getROE());
+		resultData.put("PER", data.getPER());
 		return resultData;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/code/maxRoe", produces = "application/json")
 	public HashMap getMaxRoe(@RequestParam String market) {
-		ComentoModel data = ComentoDao.getMaxRoe(market);
+		ComentoDetailModel data = ComentoDao.getMaxRoe(market);
 		HashMap<String, Object> resultData = new HashMap<>();
 		resultData.put("result", "sucess");
 		resultData.put("description", "sucess");
-		resultData.put("theme_name", data.getThema_name());
+		resultData.put("code", data.getCode());
+		resultData.put("code_name", data.getCode_name());
+		resultData.put("thema_name", data.getThema_name());
+		resultData.put("sub_price", data.getSub_price());
+		resultData.put("ROE", data.getROE());
 		return resultData;
 	}
 }
