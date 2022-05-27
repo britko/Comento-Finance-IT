@@ -93,6 +93,3 @@
     WHERE KD.code = INF.code AND KD.code = FI.code AND FI.date = '20210107'
     ORDER BY FI.ROE DESC LIMIT 1;
     ```
-
-## Week 2
-### 
